@@ -18,7 +18,7 @@ FROM openjdk:17
 WORKDIR /app
 
 # Copy the JAR file from the builder stage
-COPY --from=builder /target/generated-sources/report-automation.jar /app/report-automation.jar
+COPY --from=builder /target/report-automation.jar /app/report-automation.jar
 
 # Copy the appropriate config file based on Maven profile
 COPY src/main/resources/application-prod.properties /app/src/main/resources/application-prod.properties
