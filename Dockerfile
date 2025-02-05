@@ -9,7 +9,7 @@ COPY . .
 
 # Build the Maven project and create the JAR file
 #ARG MAVEN_OPTS="-Pdev -DactiveProfile=dev -DconfigFile=config-dev.properties"
-RUN mvn clean install $MAVEN_OPTS
+#RUN mvn clean install $MAVEN_OPTS
 
 # Use the official OpenJDK 17 image as the final image
 FROM openjdk:17
@@ -30,4 +30,7 @@ COPY src/main/resources/application-prod.properties /app/src/main/resources/appl
 # EXPOSE 8080
 
 # Set the entry point for the container (replace with your main class)
+
+RUN mvn clean install $MAVEN_OPTS
+
 ENTRYPOINT ["java", "-jar", "report-automation.jar"]
