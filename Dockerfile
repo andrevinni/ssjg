@@ -15,4 +15,4 @@ EXPOSE 8080
 
 COPY --from=build /target/generated-sources/spring-boot-jpa-udemy.jar spring-boot-jpa-udemy.jar
 
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+ENTRYPOINT [ "java", "-jar", "spring-boot-jpa-udemy.jar" ]
