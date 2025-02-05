@@ -1,16 +1,33 @@
-FROM postgres:latest AS build
+# Use the official Maven image as a build stage
+FROM maven:3.8-openjdk-17 AS builder
 
-RUN apt-get update
-RUN apt-get install openjdk-17-jdk -y
+# Set the working directory
+WORKDIR /app
+
+# Copy the source code to the working directory
 COPY . .
 
-RUN apt-get install maven -y
-RUN mvn clean install 
+# Build the Maven project and create the JAR file
+ARG MAVEN_OPTS="-Pdev -DactiveProfile=dev -DconfigFile=config-dev.properties"
+RUN mvn clean install $MAVEN_OPTS
 
-FROM openjdk:17-jdk-slim
+# Use the official OpenJDK 17 image as the final image
+FROM openjdk:17
 
-EXPOSE 8080
+# Set the working directory inside the container
+WORKDIR /app
 
-COPY --from=build /target/deploy_render-1.0.0.jar app.jar
+# Copy the JAR file from the builder stage
+COPY --from=builder /app/target/report-automation.jar /app/report-automation.jar
 
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+# Copy the appropriate config file based on Maven profile
+COPY src/main/resources/application-prod.properties /app/src/main/resources/application-prod.properties
+
+# Copy the Configuration.xlsm file from the source to the working directory in the container
+#COPY src/main/resources/Configuration.xlsm /app/src/main/resources/Configuration.xlsm
+
+# Expose the port (if your application listens on a specific port)
+# EXPOSE 8080
+
+# Set the entry point for the container (replace with your main class)
+ENTRYPOINT ["java", "-jar", "report-automation.jar"]
