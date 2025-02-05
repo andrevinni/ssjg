@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Build the Maven project and create the JAR file
-ARG MAVEN_OPTS="-Pdev -DactiveProfile=dev -DconfigFile=config-dev.properties"
+#ARG MAVEN_OPTS="-Pdev -DactiveProfile=dev -DconfigFile=config-dev.properties"
 RUN mvn clean install $MAVEN_OPTS
 
 # Use the official OpenJDK 17 image as the final image
