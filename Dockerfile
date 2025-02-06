@@ -5,7 +5,7 @@ RUN apt-get install openjdk-17-jdk -y
 COPY . .
 
 RUN apt-get install maven -y
-RUN mvn clean install
+RUN mvn clean install -X
 
 FROM openjdk:17-jdk-slim
 
@@ -17,4 +17,4 @@ WORKDIR /app
 
 COPY --from=build /target/ssjg-0.0.1-SNAPSHOT.jar /app/ssjg-0.0.1-SNAPSHOT.jar
 
-ENTRYPOINT [ "java", "-jar", "/app/spring-boot-jpa-udemy.jar" ]
+ENTRYPOINT [ "java", "-jar", "/app/ssjg-0.0.1-SNAPSHOT.jar" ]
