@@ -22,7 +22,7 @@ import com.cliquejah.ssjg.repositories.ProductRepository;
 import com.cliquejah.ssjg.repositories.UserRepository;
 
 @Configuration
-@Profile("prod")
+@Profile("dev")
 public class TestConfig implements CommandLineRunner{
 	
 	@Autowired
