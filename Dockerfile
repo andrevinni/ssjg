@@ -15,6 +15,6 @@ EXPOSE 8080
 
 WORKDIR /app
 
-COPY --from=build /target/spring-boot-jpa-udemy.jar /app/spring-boot-jpa-udemy.jar
+COPY --from=build /target/ssjg-0.0.1-SNAPSHOT.jar /app/ssjg-0.0.1-SNAPSHOT.jar
 
 ENTRYPOINT [ "java", "-jar", "/app/spring-boot-jpa-udemy.jar" ]
