@@ -13,6 +13,8 @@ EXPOSE 8080
 
 #COPY --from=build /target/deploy_render-1.0.0.jar app.jar
 
-COPY --from=build /target/spring-boot-jpa-udemy.jar spring-boot-jpa-udemy.jar
+WORKDIR /app
 
-ENTRYPOINT [ "java", "-jar", "spring-boot-jpa-udemy.jar" ]
+COPY --from=build /target/spring-boot-jpa-udemy.jar /app/spring-boot-jpa-udemy.jar
+
+ENTRYPOINT [ "java", "-jar", "/app/spring-boot-jpa-udemy.jar" ]
