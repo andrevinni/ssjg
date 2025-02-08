@@ -10,7 +10,7 @@ import jakarta.persistence.*;
  */
 @Entity
 @Table(name="armasas")
-@NamedQuery(name="Armasa.findAll", query="SELECT a FROM Armasa a")
+@NamedQuery(name="Armasas.findAll", query="SELECT a FROM Armasas a")
 public class Armasas implements Serializable {
 	private static final long serialVersionUID = 1L;
 

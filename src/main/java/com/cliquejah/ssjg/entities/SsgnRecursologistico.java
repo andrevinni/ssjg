@@ -14,11 +14,13 @@ import jakarta.persistence.*;
 public class SsgnRecursologistico implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="\"Categoria\"", length=10)
-	private String categoria;
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="\"Id_RecursoLogistico\"", nullable=false)
 	private Integer id_RecursoLogistico;
+
+	@Column(name="\"Categoria\"", length=10)
+	private String categoria;
 
 	@Column(name="\"Nome\"", length=255)
 	private String nome;

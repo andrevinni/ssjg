@@ -73,15 +73,15 @@ public class MeioSimulado implements Serializable {
 	private Set<Localizacao> localizacaoplataer;
 
 	//bi-directional many-to-one association to Localizacao
-	@OneToMany(mappedBy="meiosimulado2")
+	@OneToMany(mappedBy="meiosimuladoplatsub")
 	private Set<Localizacao> localizacaoplatsub;
 
 	//bi-directional many-to-one association to Localizacao
-	@OneToMany(mappedBy="meiosimulado3")
+	@OneToMany(mappedBy="meiosimuladoplatsup")
 	private Set<Localizacao> localizacaoplatsup;
 
 	//bi-directional many-to-one association to Localizacao
-	@OneToMany(mappedBy="meiosimulado4")
+	@OneToMany(mappedBy="meiosimuladoplatterra")
 	private Set<Localizacao> localizacaoplatterra;
 
 	//bi-directional many-to-one association to Partido
