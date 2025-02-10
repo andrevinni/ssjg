@@ -4,6 +4,8 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the base database table.
@@ -20,14 +22,14 @@ public class Base implements Serializable {
 	@Column(name="id_base", unique=true, nullable=false)
 	private Integer idBase;
 
-	private double caladomaximo;
+	private Double caladomaximo;
 
-	private double capachangaragem;
+	private Double capachangaragem;
 
 	@Column(length=2147483647)
 	private String classereparo;
 
-	private double extensaocais;
+	private Double extensaocais;
 
 	@Column(length=2147483647)
 	private String facilidadereparo;
@@ -37,13 +39,13 @@ public class Base implements Serializable {
 	private Integer fundeadnummaxnavio;
 
 	@Column(nullable=false)
-	private float latitude;
+	private Float latitude;
 
 	@Column(name="\"Login\"", length=255)
 	private String login;
 
 	@Column(nullable=false)
-	private float longitude;
+	private Float longitude;
 
 	@Column(length=255)
 	private String nome;
@@ -57,6 +59,7 @@ public class Base implements Serializable {
 	private Integer tipobasenum;
 
 	//bi-directional many-to-one association to Partido
+	@JsonIgnore
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_partido", nullable=false)
 	private Partido partido;
@@ -76,19 +79,19 @@ public class Base implements Serializable {
 		this.idBase = idBase;
 	}
 
-	public double getCaladomaximo() {
+	public Double getCaladomaximo() {
 		return this.caladomaximo;
 	}
 
-	public void setCaladomaximo(double caladomaximo) {
+	public void setCaladomaximo(Double caladomaximo) {
 		this.caladomaximo = caladomaximo;
 	}
 
-	public double getCapachangaragem() {
+	public Double getCapachangaragem() {
 		return this.capachangaragem;
 	}
 
-	public void setCapachangaragem(double capachangaragem) {
+	public void setCapachangaragem(Double capachangaragem) {
 		this.capachangaragem = capachangaragem;
 	}
 
@@ -100,11 +103,11 @@ public class Base implements Serializable {
 		this.classereparo = classereparo;
 	}
 
-	public double getExtensaocais() {
+	public Double getExtensaocais() {
 		return this.extensaocais;
 	}
 
-	public void setExtensaocais(double extensaocais) {
+	public void setExtensaocais(Double extensaocais) {
 		this.extensaocais = extensaocais;
 	}
 
@@ -132,11 +135,11 @@ public class Base implements Serializable {
 		this.fundeadnummaxnavio = fundeadnummaxnavio;
 	}
 
-	public float getLatitude() {
+	public Float getLatitude() {
 		return this.latitude;
 	}
 
-	public void setLatitude(float latitude) {
+	public void setLatitude(Float latitude) {
 		this.latitude = latitude;
 	}
 
@@ -148,11 +151,11 @@ public class Base implements Serializable {
 		this.login = login;
 	}
 
-	public float getLongitude() {
+	public Float getLongitude() {
 		return this.longitude;
 	}
 
-	public void setLongitude(float longitude) {
+	public void setLongitude(Float longitude) {
 		this.longitude = longitude;
 	}
 

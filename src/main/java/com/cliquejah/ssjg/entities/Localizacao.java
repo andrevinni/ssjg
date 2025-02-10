@@ -1,6 +1,9 @@
 package com.cliquejah.ssjg.entities;
 
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 
@@ -20,6 +23,7 @@ public class Localizacao implements Serializable {
 	private Integer idLocalizacao;
 
 	//bi-directional many-to-one association to Base
+	@JsonIgnore
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_base")
 	private Base base;
