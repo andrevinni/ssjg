@@ -1,6 +1,8 @@
 package com.cliquejah.ssjg.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -47,6 +49,9 @@ public class Localizacao implements Serializable {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_meiosimulado_platterra")
 	private MeioSimulado meiosimuladoplatterra;
+	
+	@OneToMany(mappedBy = "Localizacao")
+	private Set<Recursoslogistico> recursosLogisticos = new HashSet<>();
 
 	public Localizacao() {
 	}
@@ -97,6 +102,14 @@ public class Localizacao implements Serializable {
 
 	public void setMeioSimuladorPlatTerra(MeioSimulado meiosimuladoplatterra) {
 		this.meiosimuladoplatterra = meiosimuladoplatterra;
+	}
+
+	public Set<Recursoslogistico> getRecursosLogisticos() {
+		return recursosLogisticos;
+	}
+
+	public void setRecursosLogisticos(Set<Recursoslogistico> recursosLogisticos) {
+		this.recursosLogisticos = recursosLogisticos;
 	}
 
 }

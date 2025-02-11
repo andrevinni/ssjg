@@ -1,6 +1,9 @@
 package com.cliquejah.ssjg.entities;
 
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 
@@ -31,8 +34,10 @@ public class Recursoslogistico implements Serializable {
 	@Column(name="\"Id_Armamento\"")
 	private Integer id_Armamento;
 
-	@Column(name="\"Id_Localizacao\"", nullable=false)
-	private Integer id_Localizacao;
+	@JsonIgnore
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="id_localizacao", nullable=false)
+	private Localizacao Localizacao;
 
 	@Column(name="\"Id_Sensor\"")
 	private Integer id_Sensor;
@@ -66,7 +71,7 @@ public class Recursoslogistico implements Serializable {
 
 	@Column(name="\"VazaoRCB\"")
 	private Integer vazaoRCB;
-
+	
 	public Recursoslogistico() {
 	}
 
@@ -108,14 +113,6 @@ public class Recursoslogistico implements Serializable {
 
 	public void setId_Armamento(Integer id_Armamento) {
 		this.id_Armamento = id_Armamento;
-	}
-
-	public Integer getId_Localizacao() {
-		return this.id_Localizacao;
-	}
-
-	public void setId_Localizacao(Integer id_Localizacao) {
-		this.id_Localizacao = id_Localizacao;
 	}
 
 	public Integer getId_Sensor() {
@@ -206,4 +203,18 @@ public class Recursoslogistico implements Serializable {
 		this.vazaoRCB = vazaoRCB;
 	}
 
+	public Localizacao getLocalizacao() {
+		return Localizacao;
+	}
+
+	public void setLocalizacao(Localizacao localizacao) {
+		this.Localizacao = localizacao;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	
+	
 }
