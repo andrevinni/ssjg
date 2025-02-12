@@ -47,6 +47,7 @@ public class Partido implements Serializable {
     private Character neutro;
     
 	@OneToMany(mappedBy = "partido")
+ @JsonManagedReference
 	private Set<Base> bases = new HashSet<>();
 	
 	@OneToMany(mappedBy = "partido")
