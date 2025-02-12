@@ -32,9 +32,10 @@ public class Base implements Serializable {
 	private Integer tipobasenum;
 	
 	//bi-directional many-to-one association to Partido
-	@JsonIgnore
+	//@JsonIgnore
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_partido", nullable=false)
+@JsonBackReference
 	private Partido partido;
 	
 	@Column(name="extensao_cais", nullable=true)
