@@ -2,16 +2,23 @@ package com.cliquejah.ssjg.entities;
 
 import java.io.Serializable;
 import java.util.HashSet;
-//import java.util.HashSet;
+import java.util.List;
 //import java.util.Objects;
 //import java.util.Set;
 import java.util.Objects;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
+import jakarta.persistence.CascadeType;
+
 //import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -46,13 +53,16 @@ public class Partido implements Serializable {
     @Column(name = "neutro")
     private Character neutro;
     
-	@OneToMany(mappedBy = "partido")
-	private Set<Base> bases = new HashSet<>();
-	
-	@OneToMany(mappedBy = "partido")
+    //@JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "partido", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private Set<Base> bases = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "partido", cascade = CascadeType.ALL)
+    @JsonManagedReference
 	private Set<MeioSimulado> meiossimulados = new HashSet<>();
     
-    public Partido() {
+	public Partido() {
 	}
 
 	public Partido(Integer id, String nome, Integer codigoCor, String nomeCor, Character neutro) {
@@ -62,47 +72,46 @@ public class Partido implements Serializable {
 		this.nomeCor = nomeCor;
 		this.neutro = neutro;
 	}
-	
+
 	public Integer getId() {
-        return id;
-    }
+		return id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public Integer getCodigoCor() {
-        return codigoCor;
-    }
+	public Integer getCodigoCor() {
+		return codigoCor;
+	}
 
-    public void setCodigoCor(Integer codigoCor) {
-        this.codigoCor = codigoCor;
-    }
+	public void setCodigoCor(Integer codigoCor) {
+		this.codigoCor = codigoCor;
+	}
 
-    public String getNomeCor() {
-        return nomeCor;
-    }
+	public String getNomeCor() {
+		return nomeCor;
+	}
 
-    public void setNomeCor(String nomeCor) {
-        this.nomeCor = nomeCor;
-    }
+	public void setNomeCor(String nomeCor) {
+		this.nomeCor = nomeCor;
+	}
 
-    public Character getNeutro() {
-        return neutro;
-    }
+	public Character getNeutro() {
+		return neutro;
+	}
 
-    public void setNeutro(Character neutro) {
-        this.neutro = neutro;
-    }
-    
+	public void setNeutro(Character neutro) {
+		this.neutro = neutro;
+	}
 
 	public Set<Base> getBases() {
 		return bases;
@@ -111,7 +120,7 @@ public class Partido implements Serializable {
 	public void setBases(Set<Base> bases) {
 		this.bases = bases;
 	}
-	
+
 	public Set<MeioSimulado> getMeiossimulados() {
 		return meiossimulados;
 	}
@@ -120,24 +129,6 @@ public class Partido implements Serializable {
 		this.meiossimulados = meiossimulados;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Partido other = (Partido) obj;
-		return Objects.equals(id, other.id);
-	}
+	
+	
 }

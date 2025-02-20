@@ -2,7 +2,9 @@ package com.cliquejah.ssjg.entities;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import jakarta.persistence.*;
 
@@ -34,8 +36,10 @@ public class Recursoslogistico implements Serializable {
 	@Column(name="\"Id_Armamento\"")
 	private Integer id_Armamento;
 
-	@JsonIgnore
+	//@JsonIgnore
 	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonBackReference
+	//@JsonUnwrapped
 	@JoinColumn(name="id_localizacao", nullable=false)
 	private Localizacao Localizacao;
 

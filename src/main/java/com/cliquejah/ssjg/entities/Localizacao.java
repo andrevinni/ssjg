@@ -1,10 +1,14 @@
 package com.cliquejah.ssjg.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.*;
 
@@ -25,33 +29,37 @@ public class Localizacao implements Serializable {
 	private Integer idLocalizacao;
 
 	//bi-directional many-to-one association to Base
-	@JsonIgnore
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="id_base")
+	//@JsonIgnore
+	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+	@JoinColumn(name="id_base", referencedColumnName = "id_base")
 	private Base base;
-
+	
 	//bi-directional many-to-one association to MeioSimulado
-	@ManyToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_meiosimulado_plataer")
 	private MeioSimulado meiosimuladoplataer;
 
 	//bi-directional many-to-one association to MeioSimulado
-	@ManyToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_meiosimulado_platsub")
 	private MeioSimulado meiosimuladoplatsub;
 
 	//bi-directional many-to-one association to MeioSimulado
-	@ManyToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_meiosimulado_platsup")
 	private MeioSimulado meiosimuladoplatsup;
 
 	//bi-directional many-to-one association to MeioSimulado
-	@ManyToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_meiosimulado_platterra")
 	private MeioSimulado meiosimuladoplatterra;
 	
-	@OneToMany(mappedBy = "Localizacao")
-	private Set<Recursoslogistico> recursosLogisticos = new HashSet<>();
+	//@JsonIgnore
+	@OneToMany(/*mappedBy = "Localizacao",*/ fetch = FetchType.LAZY)
+	@JsonManagedReference
+	//private Set<Recursoslogistico> recursosLogisticos = new HashSet<>();
+	private List<Recursoslogistico> recursosLogisticos = new ArrayList<Recursoslogistico>();
+	
 
 	public Localizacao() {
 	}
@@ -104,11 +112,11 @@ public class Localizacao implements Serializable {
 		this.meiosimuladoplatterra = meiosimuladoplatterra;
 	}
 
-	public Set<Recursoslogistico> getRecursosLogisticos() {
+	public List<Recursoslogistico> getRecursosLogisticos() {
 		return recursosLogisticos;
 	}
 
-	public void setRecursosLogisticos(Set<Recursoslogistico> recursosLogisticos) {
+	public void setRecursosLogisticos(List<Recursoslogistico> recursosLogisticos) {
 		this.recursosLogisticos = recursosLogisticos;
 	}
 

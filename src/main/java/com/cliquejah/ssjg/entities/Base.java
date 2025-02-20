@@ -4,7 +4,10 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 
 /**
@@ -32,9 +35,11 @@ public class Base implements Serializable {
 	private Integer tipobasenum;
 	
 	//bi-directional many-to-one association to Partido
-	@JsonIgnore
-	@ManyToOne(fetch=FetchType.LAZY)
+	//@JsonIgnore
+	@ManyToOne(fetch = FetchType.LAZY)
+	//@JsonUnwrapped
 	@JoinColumn(name="id_partido", nullable=false)
+	@JsonBackReference
 	private Partido partido;
 	
 	@Column(name="extensao_cais", nullable=true)
@@ -71,8 +76,9 @@ public class Base implements Serializable {
 	private String login;
 
 	//bi-directional many-to-one association to Localizacao
-	@OneToMany(mappedBy="base")
-	private Set<Localizacao> localizacao;
+	//@JsonManagedReference
+	//@OneToOne(mappedBy="base")
+	//private Localizacao localizacao;
 
 	public Base() {
 	}
@@ -205,26 +211,30 @@ public class Base implements Serializable {
 		this.partido = partido;
 	}
 
-	public Set<Localizacao> getLocalizacaos() {
-		return this.localizacao;
+	//public Localizacao getLocalizacao() {
+	//	return localizacao;
+	//}
+
+	//public void setLocalizacao(Localizacao localizacao) {
+	//	this.localizacao = localizacao;
+	//}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
-
-	public void setLocalizacaos(Set<Localizacao> localizacaos) {
-		this.localizacao = localizacaos;
-	}
-
-	public Localizacao addLocalizacao(Localizacao localizacao) {
-		getLocalizacaos().add(localizacao);
-		localizacao.setBase(this);
-
-		return localizacao;
-	}
-
-	public Localizacao removeLocalizacao(Localizacao localizacao) {
-		getLocalizacaos().remove(localizacao);
-		localizacao.setBase(null);
-
-		return localizacao;
-	}
+	
+//	public Localizacao addLocalizacao(Localizacao localizacao) {
+//		getLocalizacaos().add(localizacao);
+//		localizacao.setBase(this);
+//
+//		return localizacao;
+//	}
+//
+//	public Localizacao removeLocalizacao(Localizacao localizacao) {
+//		getLocalizacaos().remove(localizacao);
+//		localizacao.setBase(null);
+//
+//		return localizacao;
+//	}
 
 }

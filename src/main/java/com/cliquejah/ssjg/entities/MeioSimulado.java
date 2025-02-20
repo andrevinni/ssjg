@@ -6,7 +6,10 @@ import jakarta.persistence.*;
 import java.util.Objects;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 
 /**
@@ -73,32 +76,40 @@ public class MeioSimulado implements Serializable {
 	private Double veloctrajeto;
 
 	//bi-directional many-to-one association to Localizacao
-//	@OneToMany(mappedBy="meiosimuladoplataer")
-//	private Set<Localizacao> localizacaoplataer;
-//
-//	//bi-directional many-to-one association to Localizacao
-//	@OneToMany(mappedBy="meiosimuladoplatsub")
-//	private Set<Localizacao> localizacaoplatsub;
-//
-//	//bi-directional many-to-one association to Localizacao
-//	@OneToMany(mappedBy="meiosimuladoplatsup")
-//	private Set<Localizacao> localizacaoplatsup;
-//
-//	//bi-directional many-to-one association to Localizacao
-//	@OneToMany(mappedBy="meiosimuladoplatterra")
-//	private Set<Localizacao> localizacaoplatterra;
+	//@JsonManagedReference
+	//@OneToOne(mappedBy="meiosimuladoplataer")
+	//@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //@JoinColumn(name = "id_meiosimulado_platsub", referencedColumnName = "id_localizacao") 	
+	//private Localizacao localizacaoplataer;
 
-	//bi-directional many-to-one association to Partido
-	@JsonIgnore
-	@ManyToOne(fetch=FetchType.LAZY)
+	//bi-directional many-to-one association to Localizacao
+	//@JsonManagedReference
+	//@OneToOne(mappedBy="meiosimuladoplatsub")
+    //@JoinColumn(name = "id_meiosimulado_platsub", referencedColumnName = "id_localizacao") 	
+	//private Localizacao localizacaoplatsub;
+
+	//bi-directional many-to-one association to Localizacao
+	//@JsonManagedReference
+	//@OneToOne(mappedBy="meiosimuladoplatsup")
+    //@JoinColumn(name = "id_meiosimulado_platsub", referencedColumnName = "id_localizacao") 	
+	//private Localizacao localizacaoplatsup;
+
+	//bi-directional many-to-one association to Localizacao
+	//@OneToOne(mappedBy="meiosimuladoplatterra")
+    //@JoinColumn(name = "id_meiosimulado_platsub", referencedColumnName = "id_localizacao") 	
+	//private Localizacao localizacaoplatterra;
+
+	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_partido", nullable=false)
+	@JsonBackReference
+	//@JsonUnwrapped
 	private Partido partido;
 
 	public MeioSimulado() {
 	}
 
 	public Integer getIdMeiosimulado() {
-		return this.idMeiosimulado;
+		return idMeiosimulado;
 	}
 
 	public void setIdMeiosimulado(Integer idMeiosimulado) {
@@ -106,7 +117,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public String getAcaoms() {
-		return this.acaoms;
+		return acaoms;
 	}
 
 	public void setAcaoms(String acaoms) {
@@ -114,7 +125,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public String getDatahora() {
-		return this.datahora;
+		return datahora;
 	}
 
 	public void setDatahora(String datahora) {
@@ -122,7 +133,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Integer getIdMss() {
-		return this.idMss;
+		return idMss;
 	}
 
 	public void setIdMss(Integer idMss) {
@@ -130,7 +141,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Integer getIdPlano() {
-		return this.idPlano;
+		return idPlano;
 	}
 
 	public void setIdPlano(Integer idPlano) {
@@ -138,7 +149,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Integer getIdTrajeto() {
-		return this.idTrajeto;
+		return idTrajeto;
 	}
 
 	public void setIdTrajeto(Integer idTrajeto) {
@@ -146,7 +157,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Integer getIdUm() {
-		return this.idUm;
+		return idUm;
 	}
 
 	public void setIdUm(Integer idUm) {
@@ -154,7 +165,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Float getLatitude() {
-		return this.latitude;
+		return latitude;
 	}
 
 	public void setLatitude(Float latitude) {
@@ -162,7 +173,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public String getLogin() {
-		return this.login;
+		return login;
 	}
 
 	public void setLogin(String login) {
@@ -170,7 +181,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Float getLongitude() {
-		return this.longitude;
+		return longitude;
 	}
 
 	public void setLongitude(Float longitude) {
@@ -178,7 +189,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public String getNome() {
-		return this.nome;
+		return nome;
 	}
 
 	public void setNome(String nome) {
@@ -186,7 +197,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public String getObservacao() {
-		return this.observacao;
+		return observacao;
 	}
 
 	public void setObservacao(String observacao) {
@@ -194,7 +205,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Integer getPlanoVoltasrestantes() {
-		return this.planoVoltasrestantes;
+		return planoVoltasrestantes;
 	}
 
 	public void setPlanoVoltasrestantes(Integer planoVoltasrestantes) {
@@ -202,7 +213,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Integer getProximoponto() {
-		return this.proximoponto;
+		return proximoponto;
 	}
 
 	public void setProximoponto(Integer proximoponto) {
@@ -210,7 +221,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Double getRumo() {
-		return this.rumo;
+		return rumo;
 	}
 
 	public void setRumo(Double rumo) {
@@ -218,7 +229,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public String getTabelameiosimulado() {
-		return this.tabelameiosimulado;
+		return tabelameiosimulado;
 	}
 
 	public void setTabelameiosimulado(String tabelameiosimulado) {
@@ -226,7 +237,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Integer getTrajetoUltimoponto() {
-		return this.trajetoUltimoponto;
+		return trajetoUltimoponto;
 	}
 
 	public void setTrajetoUltimoponto(Integer trajetoUltimoponto) {
@@ -234,7 +245,7 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Double getVelocavanco() {
-		return this.velocavanco;
+		return velocavanco;
 	}
 
 	public void setVelocavanco(Double velocavanco) {
@@ -242,160 +253,58 @@ public class MeioSimulado implements Serializable {
 	}
 
 	public Double getVeloctrajeto() {
-		return this.veloctrajeto;
+		return veloctrajeto;
 	}
 
 	public void setVeloctrajeto(Double veloctrajeto) {
 		this.veloctrajeto = veloctrajeto;
 	}
 
-//	public Set<Localizacao> getLocalizacaoPlatAer() {
-//		return this.localizacaoplataer;
+//	public Localizacao getLocalizacaoplataer() {
+//		return localizacaoplataer;
 //	}
-//
-//	public void setLocalizacaoPlatAer(Set<Localizacao> localizacaoplataer) {
+
+//	public void setLocalizacaoplataer(Localizacao localizacaoplataer) {
 //		this.localizacaoplataer = localizacaoplataer;
 //	}
-//
-//	public Localizacao addLocalizacaoPlatAer(Localizacao localizacaoplataer) {
-//		getLocalizacaoPlatAer().add(localizacaoplataer);
-//		localizacaoplataer.setMeioSimuladorPlatAer(this);
-//
-//		return localizacaoplataer;
+
+//	public Localizacao getLocalizacaoplatsub() {
+//		return localizacaoplatsub;
 //	}
-//
-//	public Localizacao removeLocalizacaoPlatAer(Localizacao localizacaoplataer) {
-//		getLocalizacaoPlatAer().remove(localizacaoplataer);
-//		localizacaoplataer.setMeioSimuladorPlatAer(null);
-//
-//		return localizacaoplataer;
-//	}
-//
-//	public Set<Localizacao> getLocalizacaoPlatSub() {
-//		return this.localizacaoplatsub;
-//	}
-//
-//	public void setLocalizacaoPlatSub(Set<Localizacao> localizacaoplatsub) {
+
+//	public void setLocalizacaoplatsub(Localizacao localizacaoplatsub) {
 //		this.localizacaoplatsub = localizacaoplatsub;
 //	}
-//
-//	public Localizacao addLocalizacaoPlatSub(Localizacao localizacaoplatsub) {
-//		getLocalizacaoPlatSub().add(localizacaoplatsub);
-//		localizacaoplatsub.setMeioSimuladorPlatSub(this);
-//
-//		return localizacaoplatsub;
+
+//	public Localizacao getLocalizacaoplatsup() {
+//		return localizacaoplatsup;
 //	}
-//
-//	public Localizacao removeLocalizacaoPlatSub(Localizacao localizacaoplatsub) {
-//		getLocalizacaoPlatSub().remove(localizacaoplatsub);
-//		localizacaoplatsub.setMeioSimuladorPlatSub(null);
-//
-//		return localizacaoplatsub;
-//	}
-//
-//	public Set<Localizacao> getLocalizacaoPlatSup() {
-//		return this.localizacaoplatsup;
-//	}
-//
-//	public void setLocalizacaoPlatSup(Set<Localizacao> localizacaoplatsup) {
+
+//	public void setLocalizacaoplatsup(Localizacao localizacaoplatsup) {
 //		this.localizacaoplatsup = localizacaoplatsup;
 //	}
 
-//	public Localizacao addLocalizacaoPlatSup(Localizacao localizacaoplatsup) {
-//		getLocalizacaoPlatSup().add(localizacaoplatsup);
-//		localizacaoplatsup.setMeioSimuladorPlatSup(this);
-//
-//		return localizacaoplatsup;
-//	}
-//
-//	public Localizacao removeLocalizacaoPlatSup(Localizacao localizacaoplatsup) {
-//		getLocalizacaoPlatSup().remove(localizacaoplatsup);
-//		localizacaoplatsup.setMeioSimuladorPlatSup(null);
-//
-//		return localizacaoplatsup;
-//	}
-//
-//	public Set<Localizacao> getLocalizacaoPlatTerra() {
-//		return this.localizacaoplatterra;
-//	}
-//
-//	public void setLocalizacaoPlatTerra(Set<Localizacao> localizacaoplatterra) {
-//		this.localizacaoplatterra = localizacaoplatterra;
-//	}
-//
-//	public Localizacao addLocalizacaoPlatTerra(Localizacao localizacaoplatterra) {
-//		getLocalizacaoPlatTerra().add(localizacaoplatterra);
-//		localizacaoplatterra.setMeioSimuladorPlatTerra(this);
-//
-//		return localizacaoplatterra;
-//	}
-//
-//	public Localizacao removeLocalizacaoPlatTerra(Localizacao localizacaoplatterra) {
-//		getLocalizacaoPlatTerra().remove(localizacaoplatterra);
-//		localizacaoplatterra.setMeioSimuladorPlatTerra(null);
-//
+//	public Localizacao getLocalizacaoplatterra() {
 //		return localizacaoplatterra;
 //	}
 
+//	public void setLocalizacaoplatterra(Localizacao localizacaoplatterra) {
+//		this.localizacaoplatterra = localizacaoplatterra;
+//	}
+
 	public Partido getPartido() {
-		return this.partido;
+		return partido;
 	}
 
 	public void setPartido(Partido partido) {
 		this.partido = partido;
 	}
 
-//	public Set<Localizacao> getLocalizacaoplataer() {
-//		return localizacaoplataer;
-//	}
-//
-//	public void setLocalizacaoplataer(Set<Localizacao> localizacaoplataer) {
-//		this.localizacaoplataer = localizacaoplataer;
-//	}
-//
-//	public Set<Localizacao> getLocalizacaoplatsub() {
-//		return localizacaoplatsub;
-//	}
-//
-//	public void setLocalizacaoplatsub(Set<Localizacao> localizacaoplatsub) {
-//		this.localizacaoplatsub = localizacaoplatsub;
-//	}
-//
-//	public Set<Localizacao> getLocalizacaoplatsup() {
-//		return localizacaoplatsup;
-//	}
-//
-//	public void setLocalizacaoplatsup(Set<Localizacao> localizacaoplatsup) {
-//		this.localizacaoplatsup = localizacaoplatsup;
-//	}
-//
-//	public Set<Localizacao> getLocalizacaoplatterra() {
-//		return localizacaoplatterra;
-//	}
-//
-//	public void setLocalizacaoplatterra(Set<Localizacao> localizacaoplatterra) {
-//		this.localizacaoplatterra = localizacaoplatterra;
-//	}
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(idMeiosimulado);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		MeioSimulado other = (MeioSimulado) obj;
-		return Objects.equals(idMeiosimulado, other.idMeiosimulado);
-	}
+	
+	
 	
 }
