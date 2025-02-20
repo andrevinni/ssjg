@@ -53,13 +53,11 @@ public class Partido implements Serializable {
     @Column(name = "neutro")
     private Character neutro;
     
-    //@JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "partido", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "partido", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
-    private Set<Base> bases = new HashSet<>();
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "partido", cascade = CascadeType.ALL)
-    @JsonManagedReference
+	private Set<Base> bases = new HashSet<>();
+	
+	@OneToMany(mappedBy = "partido")
 	private Set<MeioSimulado> meiossimulados = new HashSet<>();
     
 	public Partido() {
