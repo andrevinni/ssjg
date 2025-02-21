@@ -1,4 +1,4 @@
-package com.cliquejah.ssjg.entities.dominio;
+package com.casnav.testeapi.ssgnApi.entities.dominio;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -7,9 +7,9 @@ import jakarta.persistence.*;
 import java.time.Instant;
 
 @Entity(name = "Elemento")
-@Table(schema = "Dominio")
+//@Table(schema = "Dominio")
 @Inheritance(strategy = InheritanceType.JOINED)
-@MappedSuperclass
+//@MappedSuperclass
 public class Elemento {
     @Id
     @Column(name = "Id_Elemento", nullable = false)

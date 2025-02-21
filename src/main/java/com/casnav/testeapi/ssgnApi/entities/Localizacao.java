@@ -32,7 +32,7 @@ public class Localizacao implements Serializable {
 	//@JsonIgnore
 	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name="id_base", referencedColumnName = "id_base")
-	private Base base;
+	private Base3 base;
 	
 	//bi-directional many-to-one association to MeioSimulado
 	@OneToOne(fetch=FetchType.LAZY)
@@ -72,11 +72,11 @@ public class Localizacao implements Serializable {
 		this.idLocalizacao = idLocalizacao;
 	}
 
-	public Base getBase() {
+	public Base3 getBase() {
 		return this.base;
 	}
 
-	public void setBase(Base base) {
+	public void setBase(Base3 base) {
 		this.base = base;
 	}
 

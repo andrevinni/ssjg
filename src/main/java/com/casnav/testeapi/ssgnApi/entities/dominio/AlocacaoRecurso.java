@@ -1,4 +1,4 @@
-package com.cliquejah.ssjg.entities.dominio;
+package com.casnav.testeapi.ssgnApi.entities.dominio;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -16,7 +16,7 @@ public class AlocacaoRecurso {
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "Id_Alocacao_Recurso", nullable = false)
-    private com.cliquejah.ssjg.entities.dominio.DetalheAlocacaoLogistica detalheAlocacaoLogistica;
+    private com.casnav.testeapi.ssgnApi.entities.dominio.DetalheAlocacaoLogistica detalheAlocacaoLogistica;
 
     @Column(name = "Id_Tipo_Alocacao", nullable = false)
     private Long idTipoAlocacao;
@@ -45,11 +45,11 @@ public class AlocacaoRecurso {
         return this;
     }
 
-    public com.cliquejah.ssjg.entities.dominio.DetalheAlocacaoLogistica getDetalheAlocacaoLogistica() {
+    public com.casnav.testeapi.ssgnApi.entities.dominio.DetalheAlocacaoLogistica getDetalheAlocacaoLogistica() {
         return detalheAlocacaoLogistica;
     }
 
-    public AlocacaoRecurso setDetalheAlocacaoLogistica(com.cliquejah.ssjg.entities.dominio.DetalheAlocacaoLogistica detalheAlocacaoLogistica) {
+    public AlocacaoRecurso setDetalheAlocacaoLogistica(com.casnav.testeapi.ssgnApi.entities.dominio.DetalheAlocacaoLogistica detalheAlocacaoLogistica) {
         this.detalheAlocacaoLogistica = detalheAlocacaoLogistica;
         return this;
     }

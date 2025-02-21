@@ -1,6 +1,6 @@
-package com.casnav.testeapi.ssgnApi.modelos.Processo;
+package com.casnav.testeapi.ssgnApi.entities.processo;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ItemInterfaceRecurso", schema = "Processo")
@@ -11,7 +11,7 @@ public class ItemInterfaceRecurso {
     @MapsId("idRecurso")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "Id_Recurso", nullable = false)
-    private com.casnav.testeapi.ssgnApi.modelos.Processo.Recurso idRecurso;
+    private com.casnav.testeapi.ssgnApi.entities.processo.Recurso idRecurso;
 
     @Column(name = "Id_TipoChaveItem", nullable = false)
     private Integer idTipochaveitem;
@@ -34,11 +34,11 @@ public class ItemInterfaceRecurso {
         return this;
     }
 
-    public com.casnav.testeapi.ssgnApi.modelos.Processo.Recurso getIdRecurso() {
+    public com.casnav.testeapi.ssgnApi.entities.processo.Recurso getIdRecurso() {
         return idRecurso;
     }
 
-    public ItemInterfaceRecurso setIdRecurso(com.casnav.testeapi.ssgnApi.modelos.Processo.Recurso idRecurso) {
+    public ItemInterfaceRecurso setIdRecurso(com.casnav.testeapi.ssgnApi.entities.processo.Recurso idRecurso) {
         this.idRecurso = idRecurso;
         return this;
     }

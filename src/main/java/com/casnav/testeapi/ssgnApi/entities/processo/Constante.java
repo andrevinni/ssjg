@@ -1,6 +1,6 @@
-package com.casnav.testeapi.ssgnApi.modelos.Processo;
+package com.casnav.testeapi.ssgnApi.entities.processo;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Constantes", schema = "Processo")
@@ -11,7 +11,7 @@ public class Constante {
     @MapsId("idModulo")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "Id_Modulo", nullable = false)
-    private com.casnav.testeapi.ssgnApi.modelos.Processo.Modulo idModulo;
+    private com.casnav.testeapi.ssgnApi.entities.processo.Modulo idModulo;
 
     @Column(name = "Nome", nullable = false, length = 50)
     private String nome;
@@ -28,11 +28,11 @@ public class Constante {
         return this;
     }
 
-    public com.casnav.testeapi.ssgnApi.modelos.Processo.Modulo getIdModulo() {
+    public com.casnav.testeapi.ssgnApi.entities.processo.Modulo getIdModulo() {
         return idModulo;
     }
 
-    public Constante setIdModulo(com.casnav.testeapi.ssgnApi.modelos.Processo.Modulo idModulo) {
+    public Constante setIdModulo(com.casnav.testeapi.ssgnApi.entities.processo.Modulo idModulo) {
         this.idModulo = idModulo;
         return this;
     }

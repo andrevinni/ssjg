@@ -1,6 +1,6 @@
-package com.casnav.testeapi.ssgnApi.modelos.Montagem;
+package com.casnav.testeapi.ssgnApi.entities.montagem;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity(name = "TipoAeronave")
 @Table(schema = "Montagem_Jogos")

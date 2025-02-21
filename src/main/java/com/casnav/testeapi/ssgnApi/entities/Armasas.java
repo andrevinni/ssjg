@@ -34,7 +34,7 @@ public class Armasas implements Serializable {
 	//bi-directional one-to-one association to Armamento
 	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_armamento", nullable=false, insertable=false, updatable=false)
-	private Armamento armamento;
+	private Armamento2 armamento;
 
 	public Armasas() {
 	}
@@ -79,11 +79,11 @@ public class Armasas implements Serializable {
 		this.tipo_ArmasAS = tipo_ArmasAS;
 	}
 
-	public Armamento getArmamento() {
+	public Armamento2 getArmamento() {
 		return this.armamento;
 	}
 
-	public void setArmamento(Armamento armamento) {
+	public void setArmamento(Armamento2 armamento) {
 		this.armamento = armamento;
 	}
 

@@ -1,6 +1,6 @@
-package com.casnav.testeapi.ssgnApi.modelos.Montagem;
+package com.casnav.testeapi.ssgnApi.entities.montagem;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity(name = "ClasseSubmarino")
 @Table(schema = "Montagem_Jogos")
@@ -12,7 +12,7 @@ public class ClasseSubmarino {
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "Id_ClasseSubmarino", nullable = false)
-    private com.casnav.testeapi.ssgnApi.modelos.Montagem.ElementoMontagem elementoMontagem;
+    private com.casnav.testeapi.ssgnApi.entities.montagem.ElementoMontagem elementoMontagem;
 
     @Column(name = "DeslocamentoSup", nullable = false)
     private Double deslocamentoSup;
@@ -140,11 +140,11 @@ public class ClasseSubmarino {
         return this;
     }
 
-    public com.casnav.testeapi.ssgnApi.modelos.Montagem.ElementoMontagem getElementoMontagem() {
+    public com.casnav.testeapi.ssgnApi.entities.montagem.ElementoMontagem getElementoMontagem() {
         return elementoMontagem;
     }
 
-    public ClasseSubmarino setElementoMontagem(com.casnav.testeapi.ssgnApi.modelos.Montagem.ElementoMontagem elementoMontagem) {
+    public ClasseSubmarino setElementoMontagem(com.casnav.testeapi.ssgnApi.entities.montagem.ElementoMontagem elementoMontagem) {
         this.elementoMontagem = elementoMontagem;
         return this;
     }

@@ -1,6 +1,6 @@
-package com.casnav.testeapi.ssgnApi.modelos.Processo;
+package com.casnav.testeapi.ssgnApi.entities.processo;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "DominioConexao", schema = "Processo")
@@ -16,7 +16,7 @@ public class DominioConexao {
     @MapsId("idUsuario")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "Id_Usuario", nullable = false)
-    private com.casnav.testeapi.ssgnApi.modelos.Processo.Usuario idUsuario;
+    private com.casnav.testeapi.ssgnApi.entities.processo.Usuario idUsuario;
 
     public DominioConexaoId getId() {
         return id;
@@ -36,11 +36,11 @@ public class DominioConexao {
         return this;
     }
 
-    public com.casnav.testeapi.ssgnApi.modelos.Processo.Usuario getIdUsuario() {
+    public com.casnav.testeapi.ssgnApi.entities.processo.Usuario getIdUsuario() {
         return idUsuario;
     }
 
-    public DominioConexao setIdUsuario(com.casnav.testeapi.ssgnApi.modelos.Processo.Usuario idUsuario) {
+    public DominioConexao setIdUsuario(com.casnav.testeapi.ssgnApi.entities.processo.Usuario idUsuario) {
         this.idUsuario = idUsuario;
         return this;
     }

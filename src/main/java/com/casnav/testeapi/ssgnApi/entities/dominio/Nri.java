@@ -1,4 +1,4 @@
-package com.cliquejah.ssjg.entities.dominio;
+package com.casnav.testeapi.ssgnApi.entities.dominio;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;

@@ -1,4 +1,4 @@
-package com.cliquejah.ssjg.entities.dominio;
+package com.casnav.testeapi.ssgnApi.entities.dominio;
 
 import jakarta.persistence.*;
 
@@ -12,7 +12,7 @@ public class AcaoComando {
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "Id_Comando", nullable = false)
-    private com.cliquejah.ssjg.entities.dominio.ComandosBloco comandosBloco;
+    private com.casnav.testeapi.ssgnApi.entities.dominio.ComandosBloco comandosBloco;
 
     @Column(name = "AcaoMS", length = 100)
     private String acaoMS;
@@ -53,11 +53,11 @@ public class AcaoComando {
         return this;
     }
 
-    public com.cliquejah.ssjg.entities.dominio.ComandosBloco getComandosBloco() {
+    public com.casnav.testeapi.ssgnApi.entities.dominio.ComandosBloco getComandosBloco() {
         return comandosBloco;
     }
 
-    public AcaoComando setComandosBloco(com.cliquejah.ssjg.entities.dominio.ComandosBloco comandosBloco) {
+    public AcaoComando setComandosBloco(com.casnav.testeapi.ssgnApi.entities.dominio.ComandosBloco comandosBloco) {
         this.comandosBloco = comandosBloco;
         return this;
     }

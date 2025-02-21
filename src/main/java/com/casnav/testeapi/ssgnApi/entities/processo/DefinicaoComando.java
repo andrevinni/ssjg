@@ -1,6 +1,6 @@
-package com.casnav.testeapi.ssgnApi.modelos.Processo;
+package com.casnav.testeapi.ssgnApi.entities.processo;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "DefinicaoComando", schema = "Processo")

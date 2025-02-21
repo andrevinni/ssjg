@@ -1,6 +1,6 @@
-package com.casnav.testeapi.ssgnApi.modelos.Montagem;
+package com.casnav.testeapi.ssgnApi.entities.montagem;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity(name = "ClasseNavio")
 @Table(schema = "Montagem_Jogos")
@@ -12,7 +12,7 @@ public class ClasseNavio {
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ID_ClasseNavio", nullable = false)
-    private com.casnav.testeapi.ssgnApi.modelos.Montagem.ElementoMontagem elementoMontagem;
+    private com.casnav.testeapi.ssgnApi.entities.montagem.ElementoMontagem elementoMontagem;
 
     @Column(name = "Id_TipoPlatSuperficie")
     private Integer idTipoplatsuperficie;
@@ -110,11 +110,11 @@ public class ClasseNavio {
         return this;
     }
 
-    public com.casnav.testeapi.ssgnApi.modelos.Montagem.ElementoMontagem getElementoMontagem() {
+    public com.casnav.testeapi.ssgnApi.entities.montagem.ElementoMontagem getElementoMontagem() {
         return elementoMontagem;
     }
 
-    public ClasseNavio setElementoMontagem(com.casnav.testeapi.ssgnApi.modelos.Montagem.ElementoMontagem elementoMontagem) {
+    public ClasseNavio setElementoMontagem(com.casnav.testeapi.ssgnApi.entities.montagem.ElementoMontagem elementoMontagem) {
         this.elementoMontagem = elementoMontagem;
         return this;
     }

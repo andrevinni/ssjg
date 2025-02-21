@@ -1,6 +1,6 @@
-package com.cliquejah.ssjg.entities.dominio;
+package com.casnav.testeapi.ssgnApi.entities.dominio;
 
-import com.cliquejah.ssjg.entities.processo.DominioSimulacao;
+import com.casnav.testeapi.ssgnApi.entities.processo.DominioSimulacao;
 
 import jakarta.persistence.*;
 import java.time.Instant;

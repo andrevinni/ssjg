@@ -1,12 +1,12 @@
-package com.cliquejah.ssjg.entities.dominio;
+package com.casnav.testeapi.ssgnApi.entities.dominio;
 
 import jakarta.persistence.*;
 
 @Entity(name = "Base")
-@Table(schema = "Dominio")
-@AttributeOverrides({
-        @AttributeOverride(name = "nome", column = @Column(name = "Nome", nullable = false, length = 50))
-})
+@Table(name = "base", schema = "Dominio")
+//@AttributeOverrides({
+//        @AttributeOverride(name = "nome", column = @Column(name = "Nome", nullable = false, length = 50))
+//})
 public class Base extends Elemento {
     @Column(name = "Id_TipoBase", nullable = false)
     private Integer idTipobase;

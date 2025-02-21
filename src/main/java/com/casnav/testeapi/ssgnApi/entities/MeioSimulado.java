@@ -103,7 +103,7 @@ public class MeioSimulado implements Serializable {
 	@JoinColumn(name="id_partido", nullable=false)
 	@JsonBackReference
 	//@JsonUnwrapped
-	private Partido partido;
+	private Partido2 partido;
 
 	public MeioSimulado() {
 	}
@@ -292,11 +292,11 @@ public class MeioSimulado implements Serializable {
 //		this.localizacaoplatterra = localizacaoplatterra;
 //	}
 
-	public Partido getPartido() {
+	public Partido2 getPartido() {
 		return partido;
 	}
 
-	public void setPartido(Partido partido) {
+	public void setPartido(Partido2 partido) {
 		this.partido = partido;
 	}
 

@@ -1,12 +1,12 @@
-package com.casnav.testeapi.ssgnApi.modelos.Processo_Montagem;
+package com.casnav.testeapi.ssgnApi.entities.processo_montagem;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity(name = "TipoTorpedo")
-@Table(schema = "Processo_Montagem")
+@Table(schema = "processo_montagem")
 public class TipoTorpedo {
     @Id
     @Column(name = "Id_TipoTorpedo", nullable = false)

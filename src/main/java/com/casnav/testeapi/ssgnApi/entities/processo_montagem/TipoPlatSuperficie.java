@@ -1,12 +1,12 @@
-package com.casnav.testeapi.ssgnApi.modelos.Processo_Montagem;
+package com.casnav.testeapi.ssgnApi.entities.processo_montagem;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity(name = "TipoPlatSuperficie1")
-@Table(name = "TipoPlatSuperficie", schema = "Processo_Montagem")
+@Table(name = "TipoPlatSuperficie", schema = "processo_montagem")
 public class TipoPlatSuperficie {
     @Id
     @Column(name = "Id_TipoPlatSuperficie", nullable = false)

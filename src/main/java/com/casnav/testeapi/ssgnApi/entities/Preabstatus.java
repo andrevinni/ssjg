@@ -9,7 +9,7 @@ import jakarta.persistence.*;
  * 
  */
 @Entity
-@Table(name="preabstatus")
+@Table(name="preabstatus", schema = "public")
 @NamedQuery(name="Preabstatus.findAll", query="SELECT p FROM Preabstatus p")
 public class Preabstatus implements Serializable {
 	private static final long serialVersionUID = 1L;

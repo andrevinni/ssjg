@@ -1,6 +1,6 @@
-package com.casnav.testeapi.ssgnApi.modelos.Processo;
+package com.casnav.testeapi.ssgnApi.entities.processo;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ItemInterfaceAcesso", schema = "Processo", indexes = {
@@ -21,7 +21,7 @@ public class ItemInterfaceAcesso {
             @JoinColumn(name = "Id_Recurso", referencedColumnName = "Id_Recurso", nullable = false),
             @JoinColumn(name = "Id_ChaveItemIntf", referencedColumnName = "Id_ChaveItemIntf", nullable = false)
     })
-    private com.casnav.testeapi.ssgnApi.modelos.Processo.ItemInterfaceRecurso itemInterfaceRecurso;
+    private com.casnav.testeapi.ssgnApi.entities.processo.ItemInterfaceRecurso itemInterfaceRecurso;
 
     @MapsId("idFase")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -46,11 +46,11 @@ public class ItemInterfaceAcesso {
         return this;
     }
 
-    public com.casnav.testeapi.ssgnApi.modelos.Processo.ItemInterfaceRecurso getItemInterfaceRecurso() {
+    public com.casnav.testeapi.ssgnApi.entities.processo.ItemInterfaceRecurso getItemInterfaceRecurso() {
         return itemInterfaceRecurso;
     }
 
-    public ItemInterfaceAcesso setItemInterfaceRecurso(com.casnav.testeapi.ssgnApi.modelos.Processo.ItemInterfaceRecurso itemInterfaceRecurso) {
+    public ItemInterfaceAcesso setItemInterfaceRecurso(com.casnav.testeapi.ssgnApi.entities.processo.ItemInterfaceRecurso itemInterfaceRecurso) {
         this.itemInterfaceRecurso = itemInterfaceRecurso;
         return this;
     }

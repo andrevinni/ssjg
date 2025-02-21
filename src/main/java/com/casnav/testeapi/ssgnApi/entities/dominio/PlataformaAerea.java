@@ -1,12 +1,12 @@
-package com.cliquejah.ssjg.entities.dominio;
+package com.casnav.testeapi.ssgnApi.entities.dominio;
 
 import jakarta.persistence.*;
 
 @Entity(name = "PlataformaAerea")
 @Table(schema = "Dominio")
-@AttributeOverrides({
-        @AttributeOverride(name = "observacao", column = @Column(name = "Observacao", length = 50))
-})
+//@AttributeOverrides({
+//        @AttributeOverride(name = "observacao", column = @Column(name = "Observacao", length = 50))
+//})
 public class PlataformaAerea extends Elemento {
     @Column(name = "Id_ElementoOrigem")
     private Integer idElementoorigem;

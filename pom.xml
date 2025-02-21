@@ -9,10 +9,10 @@
 		<version>3.4.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.cliquejah</groupId>
-	<artifactId>ssjg</artifactId>
+	<groupId>com.casnav.testeapi</groupId>
+	<artifactId>ssgnApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ssjg</name>
+	<name>ssgnApi</name>
 	<description>Curso spring boot udemy</description>
 	<url />
 	<licenses>
@@ -62,7 +62,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
         		<configuration>
-            		<mainClass>com.cliquejah.ssjg.SsjgApplication</mainClass>
+            		<mainClass>com.casnav.testeapi.ssgnApi.SsjgApplication</mainClass>
             		<layout>JAR</layout>
         		</configuration>
 				<executions>
