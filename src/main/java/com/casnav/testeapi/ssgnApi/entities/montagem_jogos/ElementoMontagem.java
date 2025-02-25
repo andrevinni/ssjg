@@ -1,4 +1,4 @@
-package com.casnav.testeapi.ssgnApi.entities.montagem;
+package com.casnav.testeapi.ssgnApi.entities.montagem_jogos;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity(name = "ElementoMontagem")
-@Table(name = "Elemento_Montagem", schema = "Montagem_Jogos")
+@Table(name = "Elemento_Montagem", schema = "montagem_jogos")
 public class ElementoMontagem {
     @Id
     @Column(name = "Id_Elemento_Montagem", nullable = false)

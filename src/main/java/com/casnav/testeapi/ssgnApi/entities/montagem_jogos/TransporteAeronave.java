@@ -1,9 +1,9 @@
-package com.casnav.testeapi.ssgnApi.entities.montagem;
+package com.casnav.testeapi.ssgnApi.entities.montagem_jogos;
 
 import jakarta.persistence.*;
 
 @Entity(name = "TransporteAeronave")
-@Table(schema = "Montagem_Jogos")
+@Table(schema = "montagem_jogos")
 public class TransporteAeronave {
     @EmbeddedId
     private TransporteAeronaveId id;

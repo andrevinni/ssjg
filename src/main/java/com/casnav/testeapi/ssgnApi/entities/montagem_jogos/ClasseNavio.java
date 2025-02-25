@@ -1,9 +1,9 @@
-package com.casnav.testeapi.ssgnApi.entities.montagem;
+package com.casnav.testeapi.ssgnApi.entities.montagem_jogos;
 
 import jakarta.persistence.*;
 
 @Entity(name = "ClasseNavio")
-@Table(schema = "Montagem_Jogos")
+@Table(schema = "montagem_jogos")
 public class ClasseNavio {
     @Id
     @Column(name = "ID_ClasseNavio", nullable = false)
@@ -12,7 +12,7 @@ public class ClasseNavio {
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ID_ClasseNavio", nullable = false)
-    private com.casnav.testeapi.ssgnApi.entities.montagem.ElementoMontagem elementoMontagem;
+    private com.casnav.testeapi.ssgnApi.entities.montagem_jogos.ElementoMontagem elementoMontagem;
 
     @Column(name = "Id_TipoPlatSuperficie")
     private Integer idTipoplatsuperficie;
@@ -110,11 +110,11 @@ public class ClasseNavio {
         return this;
     }
 
-    public com.casnav.testeapi.ssgnApi.entities.montagem.ElementoMontagem getElementoMontagem() {
+    public com.casnav.testeapi.ssgnApi.entities.montagem_jogos.ElementoMontagem getElementoMontagem() {
         return elementoMontagem;
     }
 
-    public ClasseNavio setElementoMontagem(com.casnav.testeapi.ssgnApi.entities.montagem.ElementoMontagem elementoMontagem) {
+    public ClasseNavio setElementoMontagem(com.casnav.testeapi.ssgnApi.entities.montagem_jogos.ElementoMontagem elementoMontagem) {
         this.elementoMontagem = elementoMontagem;
         return this;
     }

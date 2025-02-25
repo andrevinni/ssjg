@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity(name = "TipoPlatSuperficie1")
+@Entity(name = "TipoPlatSuperficie")
 @Table(name = "TipoPlatSuperficie", schema = "processo_montagem")
 public class TipoPlatSuperficie {
     @Id

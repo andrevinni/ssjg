@@ -1,12 +1,12 @@
-package com.casnav.testeapi.ssgnApi.entities.montagem;
+package com.casnav.testeapi.ssgnApi.entities.montagem_jogos;
 
 import jakarta.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-@Entity(name = "PlantaPropulsora2")
-@Table(name = "PlantaPropulsora2", schema = "Montagem_Jogos")
-public class PlantaPropulsora2 {
+@Entity(name = "PlantaPropulsora1")
+@Table(name = "PlantaPropulsora1", schema = "montagem_jogos")
+public class PlantaPropulsora1 {
     @Id
     @Column(name = "Id_PlantaPropulsora", nullable = false)
     private Integer id;
@@ -27,7 +27,7 @@ public class PlantaPropulsora2 {
         return id;
     }
 
-    public PlantaPropulsora2 setId(Integer id) {
+    public PlantaPropulsora1 setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -36,7 +36,7 @@ public class PlantaPropulsora2 {
         return tipoPlanta;
     }
 
-    public PlantaPropulsora2 setTipoPlanta(String tipoPlanta) {
+    public PlantaPropulsora1 setTipoPlanta(String tipoPlanta) {
         this.tipoPlanta = tipoPlanta;
         return this;
     }
@@ -45,7 +45,7 @@ public class PlantaPropulsora2 {
         return descricao;
     }
 
-    public PlantaPropulsora2 setDescricao(String descricao) {
+    public PlantaPropulsora1 setDescricao(String descricao) {
         this.descricao = descricao;
         return this;
     }
@@ -54,7 +54,7 @@ public class PlantaPropulsora2 {
         return designacaoPlanta;
     }
 
-    public PlantaPropulsora2 setDesignacaoPlanta(String designacaoPlanta) {
+    public PlantaPropulsora1 setDesignacaoPlanta(String designacaoPlanta) {
         this.designacaoPlanta = designacaoPlanta;
         return this;
     }
@@ -63,7 +63,7 @@ public class PlantaPropulsora2 {
         return classeNavios;
     }
 
-    public PlantaPropulsora2 setClasseNavios(Set<ClasseNavio> classeNavios) {
+    public PlantaPropulsora1 setClasseNavios(Set<ClasseNavio> classeNavios) {
         this.classeNavios = classeNavios;
         return this;
     }

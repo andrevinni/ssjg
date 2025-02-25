@@ -1,4 +1,4 @@
-package com.casnav.testeapi.ssgnApi.entities.montagem;
+package com.casnav.testeapi.ssgnApi.entities.montagem_jogos;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity(name = "CapacidadeAlocacaoRecurso")
-@Table(schema = "Montagem_Jogos")
+@Table(schema = "montagem_jogos")
 public class CapacidadeAlocacaoRecurso {
     @Id
     @Column(name = "Id_CapacidadeAlocacaoRecurso", nullable = false)

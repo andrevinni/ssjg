@@ -1,13 +1,13 @@
-package com.casnav.testeapi.ssgnApi.entities.montagem;
+package com.casnav.testeapi.ssgnApi.entities.montagem_jogos;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity(name = "TipoPlatSuperficie2")
-@Table(schema = "Montagem_Jogos")
-public class TipoPlatSuperficie {
+@Entity(name = "TipoPlatSuperficie1")
+@Table(schema = "montagem_jogos")
+public class TipoPlatSuperficie1 {
     @Id
     @Column(name = "Id_TipoPlatSuperficie", nullable = false)
     private Integer id;
@@ -19,7 +19,7 @@ public class TipoPlatSuperficie {
         return id;
     }
 
-    public TipoPlatSuperficie setId(Integer id) {
+    public TipoPlatSuperficie1 setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -28,7 +28,7 @@ public class TipoPlatSuperficie {
         return nome;
     }
 
-    public TipoPlatSuperficie setNome(String nome) {
+    public TipoPlatSuperficie1 setNome(String nome) {
         this.nome = nome;
         return this;
     }

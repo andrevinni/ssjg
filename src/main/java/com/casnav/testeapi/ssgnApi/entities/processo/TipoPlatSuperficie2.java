@@ -6,8 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "TipoPlatSuperficie", schema = "Processo")
-public class TipoPlatSuperficie {
+@Table(name = "TipoPlatSuperficie2", schema = "Processo")
+public class TipoPlatSuperficie2 {
     @Id
     @Column(name = "Id_TipoPlatSuperficie", nullable = false)
     private Integer id;
@@ -19,7 +19,7 @@ public class TipoPlatSuperficie {
         return id;
     }
 
-    public TipoPlatSuperficie setId(Integer id) {
+    public TipoPlatSuperficie2 setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -28,7 +28,7 @@ public class TipoPlatSuperficie {
         return nome;
     }
 
-    public TipoPlatSuperficie setNome(String nome) {
+    public TipoPlatSuperficie2 setNome(String nome) {
         this.nome = nome;
         return this;
     }
