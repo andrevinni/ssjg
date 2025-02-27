@@ -6,19 +6,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Recurso", schema = "Processo")
+@Table(name = "recurso", schema = "processo")
 public class Recurso {
     @Id
-    @Column(name = "Id_Recurso", nullable = false)
+    @Column(name = "id_recurso", nullable = false)
     private Long id;
 
-    @Column(name = "Nome", nullable = false, length = 50)
+    @Column(name = "nome", nullable = false, length = 50)
     private String nome;
 
-    @Column(name = "Id_Modulo", nullable = false)
+    @Column(name = "id_modulo", nullable = false)
     private Long idModulo;
 
-    @Column(name = "Descricao", nullable = false, length = 100)
+    @Column(name = "descricao", nullable = false, length = 100)
     private String descricao;
 
     public Long getId() {
