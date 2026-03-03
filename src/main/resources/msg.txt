@@ -1,3 +1,5 @@
+////////////////
+
 Comando ASSociar:
 
 Comando ASSociar executado com sucesso.
@@ -9,3 +11,14 @@ Comando ASSociar executado com sucesso.
 25/06/2025 08:31:04.001 A Distância entre a Plataforma LEBLON e a UM 977 (Posição da primeira plataforma da UM dada por NMGR977), é maior que 25 milhas; [ID_MSS: 0] Erro no Comando ASSociar. A Distância entre a Plataforma LEBLON e a UM 977 (Posição da primeira plataforma da UM dada por NMGR977), é maior que 25 milhas; Recebido o comando de superficieazul - ASSociar na DataHora ( Imediato ) a UM ( ) 203 a PLATaforma (298;299;580;303;304;305;306;320;295) FM410; FM411; FM414; FM415; FM416; FM417; FM418; NAB911; NAM101 Comando ASSociar é INEXEQUÍVEL!!! 
 
 26/06/2025 08:40:44.004 [ID_MSS: 0] Erro no Comando ASSociar. O Partido da Plataforma NTDS302 não é o mesmo da UM 726; O Partido da Plataforma NTDS302 não é o mesmo da UM 726; Atraso na Execução do Comando de ID_MSS = 551 e Login = submarino Comando ASSociar é INEXEQUÍVEL!!! 
+
+
+///////////////////
+
+Comando MOVimentar:
+
+26/06/2025 09:07:04.004 Recebido o comando de submarino - MOVimentar na DataHora ( Imediato ) a UM (815) 728 com rumo (6,1261056745001) 351 com velocidade (13) 13
+
+26/06/2025 09:08:25.004 [ID_MSS: 567] Comando MOVimentar executado com sucesso.
+
+26/06/2025 03:46:49.000 [ID_MSS: 401] Erro no Comando MOVimentar. Impossível executar o Comando MOVimentar A UM 822 está executando Interceptação.
