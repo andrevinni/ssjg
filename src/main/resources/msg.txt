@@ -1,0 +1,11 @@
+Comando ASSociar:
+
+Comando ASSociar executado com sucesso.
+
+11/06/2025 10:00:57.000 [ID_MSS: 61] Comando ASSociar executado com sucesso. A Plataforma NAM103 foi inserida na UM 301. A Plataforma F101 foi inserida na UM 301. A Plataforma F102 foi inserida na UM 301. A Plataforma F103 foi inserida na UM 301. A Plataforma F104 foi inserida na UM 301. A Plataforma F105 foi inserida na UM 301. A Plataforma F106 foi inserida na UM 301. A Plataforma CVM801 foi inserida na UM 301. A Plataforma CVM802 foi inserida na UM 301. A Plataforma CV120 foi inserida na UM 301. A Plataforma CV121 foi inserida na UM 301. A Plataforma CV122 foi inserida na UM 
+
+11/06/2025 10:02:52.000 [ID_MSS: 0] Erro no Comando ASSociar. A Plataforma MONTESARMENTO está associada a UM de origem 973; A Plataforma MONTESARMENTO está associada a UM de origem 973; Recebido o comando de logistica - ASSociar na DataHora ( Imediato ) a UM (704) 974 a PLATaforma (584) MONTESARMENTO Comando ASSociar é INEXEQUÍVEL!!! 
+
+25/06/2025 08:31:04.001 A Distância entre a Plataforma LEBLON e a UM 977 (Posição da primeira plataforma da UM dada por NMGR977), é maior que 25 milhas; [ID_MSS: 0] Erro no Comando ASSociar. A Distância entre a Plataforma LEBLON e a UM 977 (Posição da primeira plataforma da UM dada por NMGR977), é maior que 25 milhas; Recebido o comando de superficieazul - ASSociar na DataHora ( Imediato ) a UM ( ) 203 a PLATaforma (298;299;580;303;304;305;306;320;295) FM410; FM411; FM414; FM415; FM416; FM417; FM418; NAB911; NAM101 Comando ASSociar é INEXEQUÍVEL!!! 
+
+26/06/2025 08:40:44.004 [ID_MSS: 0] Erro no Comando ASSociar. O Partido da Plataforma NTDS302 não é o mesmo da UM 726; O Partido da Plataforma NTDS302 não é o mesmo da UM 726; Atraso na Execução do Comando de ID_MSS = 551 e Login = submarino Comando ASSociar é INEXEQUÍVEL!!! 
