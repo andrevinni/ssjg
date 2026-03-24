@@ -99,5 +99,65 @@ const autenticar = async () => {
 };
 
 
+///login
+
+import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { authService } from '../services/authService';
+import HandleLogin from './HandleLogin';
+import Loading from '../components/Loading/Loading';
+
+const Login = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  // Se já está autenticado, redireciona direto
+  useEffect(() => {
+    if (authService.isAuthenticated()) {
+      navigate('/home', { replace: true });
+    }
+  }, [navigate]);
+
+  const handleLogin = async () => {
+    setLoading(true);
+    setErrorMessage(null);
+
+    try {
+      // 1. Faz login e salva tokens
+      await authService.login();
+
+      // 2. Busca authorities
+      await authService.getAuthorities();
+
+      // 3. Redireciona
+      navigate('/home', { replace: true });
+
+    } catch (err) {
+      console.error('❌ Erro no login:', err);
+      setErrorMessage('Erro na autenticação. Verifique suas credenciais.');
+      authService.logout();
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return <Loading fullScreen message="Validando acesso com o servidor…" />;
+  }
+
+  return (
+    <div>
+      {errorMessage && (
+        <div className="error-card">{errorMessage}</div>
+      )}
+      <HandleLogin onLogin={handleLogin} errorMessage={errorMessage} />
+    </div>
+  );
+};
+
+export default Login;
+
+
 
 
