@@ -85,3 +85,19 @@ export const authService = {
   isAuthenticated: () => !!getAccessToken() && isTokenValid(),
   getAccessToken,
 };
+
+
+
+const autenticar = async () => {
+  try {
+    await authService.login(username, password);
+    await authService.getAuthorities();
+    navigate('/home');
+  } catch (err) {
+    console.error('❌ Erro no login:', err);
+  }
+};
+
+
+
+
