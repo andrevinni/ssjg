@@ -1,0 +1,166 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Fluxo SSJG" id="ssjg-flow">
+    <mxGraphModel dx="1240" dy="731" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="START" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d9eaff;strokeColor=#2c7cb6;fontStyle=1;fontSize=13;" value="https://app.ssjg.canav.mb" vertex="1">
+          <mxGeometry height="40" width="200" x="680" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AUTH" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff4dc;strokeColor=#d4a500;" value="Já está autenticado?" vertex="1">
+          <mxGeometry height="80" width="180" x="690" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="START" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="AUTH">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="AUTH" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontColor=#008800;" target="HOME" value="Sim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="AUTH" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="SSO_URL" value="Não">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SSO_URL" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0f5e6;strokeColor=#2d6e46;" value="sso.score.ctim.mb:9000&#xa;/realms/score2-dev" vertex="1">
+          <mxGeometry height="50" width="240" x="660" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="LOGIN" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Selecionar tipo de identificador&#xa;NIP / CPF / Email + Senha" vertex="1">
+          <mxGeometry height="50" width="260" x="650" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="SSO_URL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="LOGIN">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CRED" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff4dc;" value="Credenciais válidas?" vertex="1">
+          <mxGeometry height="70" width="180" x="690" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="LOGIN" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="CRED">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ERR_SSO" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6e6;strokeColor=#cc0000;dashed=1;" value="⚠ Serviço indisponível.&#xa;Tente mais tarde." vertex="1">
+          <mxGeometry height="50" width="160" x="1020" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_err" edge="1" parent="1" source="CRED" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="ERR_SSO" value="SSO indisponível">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="CRED" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontColor=#008800;" target="HOME" value="Sim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HOME" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d9eaff;strokeColor=#2c7cb6;fontStyle=1;fontSize=14;" value="🏠 Home" vertex="1">
+          <mxGeometry height="45" width="140" x="710" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="CARD_C" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Card Carimbó" vertex="1">
+          <mxGeometry height="40" width="120" x="200" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="CARD_A" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Card Azuver" vertex="1">
+          <mxGeometry height="40" width="120" x="440" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="CARD_M" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Card Mahjid" vertex="1">
+          <mxGeometry height="40" width="120" x="680" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_c1" edge="1" parent="1" source="HOME" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="CARD_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_c2" edge="1" parent="1" source="HOME" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="CARD_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_c3" edge="1" parent="1" source="HOME" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="CARD_M">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MENU" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="☰ Menu" vertex="1">
+          <mxGeometry height="40" width="120" x="920" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_menu" edge="1" parent="1" source="HOME" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="MENU">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PERFIL" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f0;" value="Perfil / Configurações" vertex="1">
+          <mxGeometry height="35" width="150" x="920" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="LOGOUT" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f0;" value="Sair / Logout" vertex="1">
+          <mxGeometry height="35" width="150" x="920" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_perfil" edge="1" parent="1" source="MENU" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="PERFIL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_logout" edge="1" parent="1" source="MENU" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="LOGOUT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HAB_C" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff4dc;" value="Carimbó habilitado?" vertex="1">
+          <mxGeometry height="60" width="180" x="170" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="HAB_A" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff4dc;" value="Azuver habilitado?" vertex="1">
+          <mxGeometry height="60" width="180" x="410" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="HAB_M" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff4dc;" value="Mahjid habilitado?" vertex="1">
+          <mxGeometry height="60" width="180" x="650" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_hab_c" edge="1" parent="1" source="CARD_C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="HAB_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_hab_a" edge="1" parent="1" source="CARD_A" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="HAB_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_hab_m" edge="1" parent="1" source="CARD_M" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="HAB_M">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MSG_C" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6e6;strokeColor=#cc0000;dashed=1;" value="⚠ Módulo não habilitado&#xa;para este perfil" vertex="1">
+          <mxGeometry height="45" width="150" x="30" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_msg_c" edge="1" parent="1" source="HAB_C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="MSG_C" value="Não">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MSG_A" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6e6;strokeColor=#cc0000;dashed=1;" value="⚠ Módulo não habilitado&#xa;para este perfil" vertex="1">
+          <mxGeometry height="45" width="150" x="280" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_msg_a" edge="1" parent="1" source="HAB_A" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="MSG_A" value="Não">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MSG_M" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6e6;strokeColor=#cc0000;dashed=1;" value="⚠ Módulo não habilitado&#xa;para este perfil" vertex="1">
+          <mxGeometry height="45" width="150" x="530" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_msg_m" edge="1" parent="1" source="HAB_M" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="MSG_M" value="Não">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="back_c" edge="1" parent="1" source="MSG_C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" target="HOME">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="back_a" edge="1" parent="1" source="MSG_A" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" target="HOME">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="back_m" edge="1" parent="1" source="MSG_M" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" target="HOME">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SEL_C" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d9eaff;" value="Selecionar Jogo" vertex="1">
+          <mxGeometry height="40" width="180" x="170" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_sel_c" edge="1" parent="1" source="HAB_C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontColor=#008800;" target="SEL_C" value="Sim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NJ_C" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Novo Jogo Carimbó" vertex="1">
+          <mxGeometry height="35" width="160" x="50" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="EJ_C" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Carimbó 2026" vertex="1">
+          <mxGeometry height="35" width="140" x="260" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_njc" edge="1" parent="1" source="SEL_C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="NJ_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_ejc" edge="1" parent="1" source="SEL_C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="EJ_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CFG_C" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f0e8;" value="Configurar Jogo&#xa;participantes · cenário · regras" vertex="1">
+          <mxGeometry height="45" width="200" x="30" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="MAPA_C" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f5e6;strokeColor=#2d6e46;fontStyle=1;" value="🗺 Mapa/Carta Carimbó 2026" vertex="1">
+          <mxGeometry height="45" width="220" x="40" y="1210" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_cfgc" edge="1" parent="1" source="NJ_C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="CFG_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_cfgc2" edge="1" parent="1" source="CFG_C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="MAPA_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_ejcmap" edge="1" parent="1" source="EJ_C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="MAPA_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
