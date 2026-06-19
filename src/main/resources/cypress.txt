@@ -1,0 +1,73 @@
+PS C:\WINDOWS\system32> Get-ChildItem "$env:APPDATA\Cypress" -Recurse -Filter "state.json" 2>$null
+
+
+    Diretório: C:\Users\user_default\AppData\Roaming\Cypress\cy\production\browsers\firefox-stable\run-7936\rust_mozprofile4cooNW\datareporting
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/06/2026     16:55            236 state.json
+
+
+    Diretório: C:\Users\user_default\AppData\Roaming\Cypress\cy\production\browsers\firefox-stable\run-7936\rust_mozprofile4cooNW\rust_mozprofileDt5POe\datareporting
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/06/2026     16:54            236 state.json
+
+
+    Diretório: C:\Users\user_default\AppData\Roaming\Cypress\cy\production\browsers\firefox-stable\run-7936\rust_mozprofileDt5POe\datareporting
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/06/2026     16:54            236 state.json
+
+
+    Diretório: C:\Users\user_default\AppData\Roaming\Cypress\cy\production\projects\ssjg-frontend - sem gerenciador de camadas-1a045d2e96dd44f3f3ef86024dca4a29
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        18/06/2026     15:19            111 state.json
+
+
+    Diretório: C:\Users\user_default\AppData\Roaming\Cypress\cy\production\projects\ssjg-frontend - sem gerenciador de camadas-1d3f736b7a0f5aaec64980b6baa6c6a2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        15/06/2026     08:45            226 state.json
+
+
+    Diretório: C:\Users\user_default\AppData\Roaming\Cypress\cy\production\projects\ssjg-frontend-7e4d8bf8bc495698b20626afc5e919ce
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        18/06/2026     15:55            257 state.json
+
+
+    Diretório: C:\Users\user_default\AppData\Roaming\Cypress\cy\production\projects\ssjg-frontend1-c0347c270a1e6df8dc633bb35562c93c
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        29/04/2026     19:00            111 state.json
+
+
+    Diretório: C:\Users\user_default\AppData\Roaming\Cypress\cy\production\projects\ssjg-frontend2-154ff226fe845917460f726fb1b06145
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        18/06/2026     08:05            178 state.json
+
+
+    Diretório: C:\Users\user_default\AppData\Roaming\Cypress\cy\production\projects\__global__
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        19/06/2026     08:33            424 state.json
