@@ -1,0 +1,22 @@
+{
+  "majorVersionWelcomeDismissed": {
+    "14": 1780937664642,
+    "15": 1777381873191
+  },
+  "reporterWidth": 836,
+  "browserWidth": 1868,
+  "browserHeight": 899,
+  "browserX": -7,
+  "browserY": 0,
+  "isBrowserDevToolsOpen": false,
+  "banners": {
+    "cloud:ai_tools_education": {
+      "lastShown": 1781808904509
+    }
+  },
+  "appX": 0,
+  "appY": 0,
+  "isAppDevToolsOpen": true,
+  "appWidth": 1886,
+  "appHeight": 915
+}
