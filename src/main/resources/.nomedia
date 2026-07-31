@@ -1,1 +1,69 @@
 eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ3Vm9JYU5wMTRnTjFEa1FZUzROYkpJOVkwaDF1RzVMS0VqN19laGRsLTc4In0.eyJleHAiOjE3ODU1MDE1OTksImlhdCI6MTc4NTQ5ODAwMCwiYXV0aF90aW1lIjoxNzg1NDk3OTk5LCJqdGkiOiJiYjIzYzE0NC1mMTU3LTQwMDEtYjYwZC1jYjAwNTA0NjBhMGEiLCJpc3MiOiJodHRwczovL3Nzby5zY29yZS5jdGltLm1iOjkwMDAvcmVhbG1zL3Njb3JlMi1kZXYiLCJhdWQiOlsiYXBwLXByb3h5IiwiYWNjb3VudCIsImFwcC1zY29yZSJdLCJzdWIiOiJlYWM0YmEwYi0zOGRiLTQzOTktOWI2YS0yMmM2MmJjZTVhY2UiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcHAtc3NqZyIsInNlc3Npb25fc3RhdGUiOiIxMzg3ZTM3NC1lYzdlLTQ1ZmQtYTRlMS05MWFhMDcwZmQ5NjUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtc2NvcmUyLWRldiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJzY29yZTItYXBpLWdlcmFsIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYXBwLXByb3h5Ijp7InJvbGVzIjpbImNvbXVuaWNhY2FvIiwiYXJtYXplbmFtZW50byIsInBhZHJhbyIsInZpZGVvIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX0sImFwcC1zY29yZSI6eyJyb2xlcyI6WyJ1c3VhcmlvIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjEzODdlMzc0LWVjN2UtNDVmZC1hNGUxLTkxYWEwNzBmZDk2NSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlJPQkVSVEEgQ0FTVFJPIFJPQkVSVEEgQ0FTVFJPIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiMDc5MzUzNzc3MDciLCJnaXZlbl9uYW1lIjoiUk9CRVJUQSBDQVNUUk8iLCJmYW1pbHlfbmFtZSI6IlJPQkVSVEEgQ0FTVFJPIiwiZW1haWwiOiIwNzkzNTM3NzcwN0BzY29yZS5tYiJ9.VjWV-yAPGcgwKI9t6Qa6hvHEXZKDzOsJvp1GaWCkMI0qWw-K1dNkyCu4beBCyNS1b_lW5PiDAMaPGy-0Tjo36FIaO5eXpyTsGr3OC02hsb4R54Wt6hALRmR0uYN354Zvi4btAptYhxiVbg2NZxzaDaVA76Md2FjIzY7tPysrYggy1WUnpTdeFCRcP6Mb55EdUk7GCrgYrGfLDRKOL2WCZASxhH6oDEOm23kPH74n-D3pLhr2tGfD2QoDbsxVQkc8Vr98Wn9H2lPAMB90ed2mNCB0n3UB4tQzPvnZaZS5fdzTjpEIy2ITjUESqdqiQbTc1wmVslliXKPKZnIR-xDwOQ
+
+
+Cabeçalho decodificado
+{
+    "alg": "RS256",
+    "typ": "JWT",
+    "kid": "wVoIaNp14gN1DkQYS4NbJI9Y0h1uG5LKEj7_ehdl-78"
+}
+
+Payload decodificado
+{
+    "exp": 1785501599,
+    "iat": 1785498000,
+    "auth_time": 1785497999,
+    "jti": "bb23c144-f157-4001-b60d-cb0050460a0a",
+    "iss": "https://sso.score.ctim.mb:9000/realms/score2-dev",
+    "aud": [
+        "app-proxy",
+        "account",
+        "app-score"
+    ],
+    "sub": "eac4ba0b-38db-4399-9b6a-22c62bce5ace",
+    "typ": "Bearer",
+    "azp": "app-ssjg",
+    "session_state": "1387e374-ec7e-45fd-a4e1-91aa070fd965",
+    "acr": "1",
+    "allowed-origins": [
+        "*"
+    ],
+    "realm_access": {
+        "roles": [
+            "default-roles-score2-dev",
+            "offline_access",
+            "uma_authorization",
+            "score2-api-geral"
+        ]
+    },
+    "resource_access": {
+        "app-proxy": {
+            "roles": [
+                "comunicacao",
+                "armazenamento",
+                "padrao",
+                "video"
+            ]
+        },
+        "account": {
+            "roles": [
+                "manage-account",
+                "manage-account-links",
+                "view-profile"
+            ]
+        },
+        "app-score": {
+            "roles": [
+                "usuario"
+            ]
+        }
+    },
+    "scope": "openid email profile",
+    "sid": "1387e374-ec7e-45fd-a4e1-91aa070fd965",
+    "email_verified": false,
+    "name": "ROBERTA CASTRO ROBERTA CASTRO",
+    "preferred_username": "07935377707",
+    "given_name": "ROBERTA CASTRO",
+    "family_name": "ROBERTA CASTRO",
+    "email": "07935377707@score.mb"
+}
