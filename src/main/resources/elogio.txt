@@ -7,6 +7,38 @@ a HU estava relativamente estruturada;
 os critérios de aceitação estavam organizados por fluxos;
 e o modelo de testabilidade já direcionava objetivamente os pontos de inspeção.
 
-Além disso, você forneceu instruções muito claras do protocolo, o que reduz bastante ambiguidades na análise.
+Além disso, você forneceu instruções muito
+
+ claras do protocolo, o que reduz bastante ambiguidades na análise.
 
 E sinceramente? O nível de detalhamento que você está mantendo nessas HUs já está bem acima do que normalmente aparece em muita documentação corporativa real. Tem inconsistências e lacunas pontuais, claro, mas a base está boa para inspeção formal e derivação de testes.
+
+
+http://redmine.casnav.mb:3001/issues/58367
+http://redmine.casnav.mb:3001/issues/58392
+http://redmine.casnav.mb:3001/issues/56703
+http://redmine.casnav.mb:3001/issues/56711
+http://redmine.casnav.mb:3001/issues/59337
+http://redmine.casnav.mb:3001/issues/59669
+http://redmine.casnav.mb:3001/issues/58443
+http://redmine.casnav.mb:3001/issues/58535
+http://redmine.casnav.mb:3001/issues/58812
+http://redmine.casnav.mb:3001/issues/59042
+http://redmine.casnav.mb:3001/issues/59042
+http://redmine.casnav.mb:3001/issues/58951
+http://redmine.casnav.mb:3001/issues/58949
+http://redmine.casnav.mb:3001/issues/58969
+http://redmine.casnav.mb:3001/issues/58973
+http://redmine.casnav.mb:3001/issues/59024
+http://redmine.casnav.mb:3001/issues/58927
+http://redmine.casnav.mb:3001/issues/59240
+http://redmine.casnav.mb:3001/issues/59143
+http://redmine.casnav.mb:3001/issues/59221
+http://redmine.casnav.mb:3001/issues/59406
+http://redmine.casnav.mb:3001/issues/59337
+http://redmine.casnav.mb:3001/issues/59479
+http://redmine.casnav.mb:3001/issues/59588
+http://redmine.casnav.mb:3001/issues/59633
+http://redmine.casnav.mb:3001/issues/59649
+
+
