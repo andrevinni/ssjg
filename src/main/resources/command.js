@@ -43,3 +43,69 @@ function sincronizarCinematicaComMock(idAeronave, lonAlvo, latAlvo, tentativas =
     sincronizarCinematicaComMock(idAeronave, lonAlvo, latAlvo, tentativas + 1);
   });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Função recursiva de sincronização injetando os dados reais na Fixture local
+function sincronizarCinematicaNaFixture(idAeronave, lonAlvo, latAlvo, token, tentativas = 0) {
+  if (tentativas > 120) {
+    throw new Error(`Timeout: A aeronave ${idAeronave} não atingiu o alvo na cinemática real.`);
+  }
+
+  // 1. Faz a requisição HTTP passando o token de autorização no Header
+  cy.request({
+    method: "GET",
+    url: "http://10.5.112",
+    headers: {
+      Authorization: `Bearer ${token}` // Ou o formato que seu backend exigir (ex: 'Token XYZ')
+    }
+  }).then((response) => {
+    const payloadReal = response.body;
+    let dadosAviao = null;
+
+    // 2. Procura a aeronave dentro das plataformas das bases
+    payloadReal.cenario.bases.forEach((base) => {
+      if (base.plataformas && base.plataformas.length > 0) {
+        const achou = base.plataformas.find(p => p.nome === idAeronave);
+        if (achou) dadosAviao = achou;
+      }
+    });
+
+    if (!dadosAviao) {
+      throw new Error(`Aeronave ${idAeronave} não encontrada no cenário real.`);
+    }
+
+    // 3. ATUALIZA O ARQUIVO FÍSICO: Sobrescreve a fixture mockada que o app consome
+    // Isso garante que o frontend leia os dados atualizados sem afetar permanentemente o Git, 
+    // pois o arquivo é atualizado dinamicamente em tempo de execução.
+    cy.writeFile("cypress/fixtures/cenario.json", payloadReal);
+
+    // 4. Captura as coordenadas decimais diretas
+    const lonAtual = dadosAviao.coordenadas.decimal.longitude;
+    const latAtual = dadosAviao.coordenadas.decimal.latitude;
+
+    // Margem de tolerância aceitável (0.001 graus)
+    const chegouNoAlvo = Math.abs(lonAtual - lonAlvo) < 0.001 && Math.abs(latAtual - latAlvo) < 0.001;
+
+    if (chegouNoAlvo) {
+      cy.log(`🎯 Sucesso! ${idAeronave} chegou nas coordenadas alvo no backend.`);
+      return; // Sai da recursão e prossegue com o teste
+    }
+
+    // Se ainda estiver em trânsito, espera 5 segundos e repete o processo
+    cy.wait(5000);
+    sincronizarCinematicaNaFixture(idAeronave, lonAlvo, latAlvo, token, tentativas + 1);
+  });
+}
+
