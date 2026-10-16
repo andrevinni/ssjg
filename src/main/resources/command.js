@@ -109,3 +109,31 @@ function sincronizarCinematicaNaFixture(idAeronave, lonAlvo, latAlvo, token, ten
   });
 }
 
+
+
+  }).then((response) => {
+    // Garante que o payload seja tratado como objeto JSON, mesmo se o Cypress ler como string
+    const payloadReal = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+
+    // Adiciona uma validação de segurança caso o backend venha vazio por algum erro de sessão
+    if (!payloadReal || !payloadReal.cenario) {
+      throw new Error(`A API respondeu com sucesso mas o objeto 'cenario' veio nulo. Resposta real: ${JSON.stringify(payloadReal)}`);
+    }
+
+    let dadosUM = null;
+
+    // 2. Procura o elemento dentro das plataformas das bases (Agora sem erro de undefined!)
+    payloadReal.cenario.bases.forEach((base) => {
+      if (base.plataformas && base.plataformas.length > 0) {
+        const achou = base.plataformas.find(p => p.nome === UM);
+        if (achou) dadosUM = achou;
+      }
+    });
+
+
+
+
+
+
+
+
