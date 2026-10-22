@@ -1,0 +1,22 @@
+Resumo dos testes realizados:
+
+    1 Organização:
+        1.1 ASSociar - Ok
+
+    2 Controle de Posição:
+        2.1 REPOsicionar - Ok
+
+    3 Movimento geral:
+        3.1 MOVImentar - Ok
+        3.2 ATRacar - Ok
+        3.3 EXEcutar - Ok
+        3.4 ACoMpanhar - Não houve mudança no rumo da UM acompanhante. 
+        3.5 INTerceptar - Ok
+       
+    4 Movimento de aeronave:
+        4.1 DEColar - Ok
+        4.2 POUsar - Ok       
+    
+    5 Analista:
+        5.1 DEStruir - Sem uma indicação visual sobre a plataforma não é posivel afirmar que o comando tenha sido de fato executado.
+           
